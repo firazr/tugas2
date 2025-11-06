@@ -2,7 +2,8 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <title>@yield('title', 'Klug')</title>
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -19,6 +20,42 @@
             </style>
         @endif
     </head>
+
+<script>
+(() => {
+  const burger = document.querySelector('.burger');
+  const nav = document.querySelector('#primary-menu');
+  if(!burger || !nav) return;
+
+  const toggle = () => {
+    const open = nav.classList.toggle('open');
+    burger.classList.toggle('active', open);
+    document.body.classList.toggle('no-scroll', open);
+    burger.setAttribute('aria-expanded', String(open));
+  };
+  burger.addEventListener('click', toggle);
+
+  nav.addEventListener('click', e => {
+    if (e.target.closest('a')) {
+      nav.classList.remove('open');
+      burger.classList.remove('active');
+      document.body.classList.remove('no-scroll');
+      burger.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 992 && nav.classList.contains('open')) {
+      nav.classList.remove('open');
+      burger.classList.remove('active');
+      document.body.classList.remove('no-scroll');
+      burger.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+</script>
+
+
     <body class="bg-[#FDFDFC] dark:bg-[#0a0a0a] text-[#1b1b18] flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col">
         <header class="w-full lg:max-w-4xl max-w-[335px] text-sm mb-6 not-has-[nav]:hidden">
             @if (Route::has('login'))

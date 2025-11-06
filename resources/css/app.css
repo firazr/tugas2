@@ -9,3 +9,46 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+:root{
+  --container: min(1100px, 92vw);
+  --gap: clamp(12px, 2.2vw, 24px);
+}
+
+/* Container pusat */
+.container{ width: var(--container); margin-inline: auto; padding-inline: var(--gap); }
+
+/* Media selalu fleksibel */
+img, picture, video, canvas{ display:block; max-width:100%; height:auto; }
+
+/* Hindari overflow horisontal */
+*{ box-sizing:border-box; }
+html, body{ overflow-x:hidden; }
+
+/* Tipografi fleksibel */
+h1.hero-title{
+  font-size: clamp(24px, 4.2vw, 48px);
+  line-height: 1.15;
+  letter-spacing: .2px;
+  max-width: 28ch;
+}
+
+/* Hero */
+.hero,
+.contact-hero-top{
+  min-height: clamp(220px, 42vw, 420px);
+  background-size: cover;
+  background-position: center;
+}
+
+/* Tombol biar enak disentuh */
+button, .btn{
+  min-height: 44px; 
+  padding: .7rem 1.1rem;
+  font-size: clamp(14px, 3.4vw, 16px);
+  border-radius: 999px;
+}
+
+/* Safari/Chrome mobile biar gak auto-zoom pas fokus input */
+input, select, textarea{ font-size:16px; }
+

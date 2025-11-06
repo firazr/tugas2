@@ -14,6 +14,9 @@
   <!-- File CSS utama -->
   <link rel="stylesheet" href="{{ asset('assets/css/landing.css') }}"/>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" referrerpolicy="no-referrer" />
+
+
   <!-- Reset semua elemen ke Poppins -->
   <style>
     * {

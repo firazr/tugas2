@@ -2,12 +2,12 @@
 @section('title','Layanan Kami')
 
 @section('content')
-  <!-- Page hero (same header style as Tentang) -->
-  <section class="page-hero" style="background-image:url('{{ asset('assets/images/jmbt.jpg') }}'); background-position:center;">
-    <div class="page-hero__overlay">
-      <h1>LAYANAN KAMI</h1>
-    </div>
-  </section>
+<section class="services-hero" style="background-image:url('{{ asset('assets/images/layanan2.jpg') }}')">
+  <div class="services-hero__overlay">
+    <h1>LAYANAN KAMI</h1>
+  </div>
+</section>
+
 
   <section class="section">
     <div class="services-grid services-grid--large">
@@ -31,10 +31,4 @@
     </div>
   </section>
 
-  <section class="section">
-    <div class="cta-row">
-      <a href="{{ url('/hubungi-kami') }}" class="btn-gradient">KONSULTASI GRATIS</a>
-      <a href="{{ url('/artikel') }}" class="btn-outline-pill btn-outline-pill--primary">BACA ARTIKEL</a>
-    </div>
-  </section>
 @endsection
